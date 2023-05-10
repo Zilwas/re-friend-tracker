@@ -92,6 +92,14 @@ export class GuiModel {
                             "required": true
                         },
                         {
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
+                        {
                             "type": "deleteButton",
                             "name": "Delete"
                         },
@@ -147,6 +155,20 @@ export class GuiModel {
                             "required": true
                         },
                         {
+                            "id": "creationdate",
+                            "type": "date",
+                            "name": "CreationDate",
+                            "width": 2
+                        },
+                        {
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
+                        {
                             "type": "deleteButton",
                             "name": "Delete"
                         },
@@ -173,6 +195,28 @@ export class GuiModel {
                     "required": true
                     },
                     {
+                        "id": "location",
+                        "type": "autocomplete",
+                        "name": "Location",
+                        "url": "/location",
+                        "form": "LocationForm",
+                        "width": 2
+                    },
+                    {
+                        "id": "creationdate",
+                        "type": "date",
+                        "name": "CreationDate",
+                        "width": 2
+                    },
+                    {
+                        "id": "comment",
+                        "type": "text",
+                        "name": "Comments",
+                        "width": 2,
+                        "height": 4,
+                        "maxLength": 5000,
+                    },
+                    {
                     "type": "deleteButton",
                     "name": "Delete"
                     },
@@ -185,7 +229,7 @@ export class GuiModel {
                     "name": "Ok"
                     }
                     ]
-                   }
+                   },
             ],
             "pageList":
                 [
@@ -244,12 +288,44 @@ export class GuiModel {
                                 "color": "blue",
                                 "search": true,
                                 "url": "/friend",
-                                "form": {
-                                    "form": "FriendForm"
-                                }
+                                "page": "friendnew",
                             },
                         ]
                     },
+                    {
+                        "id": "friendnew",
+                        "elementList": [
+                            {
+                                "type": "backbutton",
+                            },
+                            {
+                                "type": "newButton",
+                                "name": "EditFriend",
+                                "icon": "fa-user",
+                                "color": "green",
+                                "url": "/friend",
+                                "form": {
+                                    "form": "FriendForm"
+                                }
+                                },
+                                {
+                                    "type": "newButton",
+                                    "name": "AddActivity",
+                                    "icon": "fa-dribbble",
+                                    "color": "green",
+                                    "form": {
+                                        "form": "AddActivityForm"
+                                    }
+                                },
+                                {
+                                    "type": "list",
+                                    "icon": "fa-dribbble",
+                                    "color": "alizarin",
+                                    "search": true,
+                                    "url": "/friend/:friendKey/activity",
+                                },
+                            ]
+                        },
                     {
                         "id": "locationspage",
                         "elementList": [
@@ -335,6 +411,7 @@ export class GuiModel {
                                 
                         ]
                     }
+                    
                 ]
         }
     };
