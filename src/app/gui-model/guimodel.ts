@@ -188,6 +188,13 @@ export class GuiModel {
                             "color": "wisteria",
                             "page": "groupspage",
                            },
+                           {
+                            "type": "button",
+                            "name": "Activity",
+                            "icon": "fa-bicycle",
+                            "color": "alizarin",
+                            "page": "activitypage",
+                           },
                     ]
                 },
                 {
